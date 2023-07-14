@@ -1,13 +1,13 @@
 pipeline {
-  agent any
+  agent master
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
     HEROKU_API_KEY = credentials('heroku-api-key')
-    IMAGE_NAME = 'darinpope/jenkins-example-react'
+    IMAGE_NAME = 'nkwochidubem/jenkins-example-react-app'
     IMAGE_TAG = 'latest'
-    APP_NAME = 'jenkins-example-react'
+    APP_NAME = 'jenkins-example-react-app'
   }
   stages {
     stage('Build') {
